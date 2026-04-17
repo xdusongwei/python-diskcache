@@ -1,0 +1,49 @@
+[project]
+name = "python-diskcache"
+version = "5.7.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "xdusongwei", email = "github@songwei.name"},
+]
+dependencies = []
+requires-python = ">=3.13"
+readme = "README.md"
+license = {text = "MIT"}
+
+[project.optional-dependencies]
+test = [
+    "blue>=0.9.1",
+    "coverage>=7.13.5",
+    "django==4.2.*",
+    "django-redis>=6.0.0",
+    "doc8>=2.0.0",
+    "flake8>=4.0.1",
+    "ipython>=9.12.0",
+    "jedi>=0.19.2",
+    "pickleDB>=1.6",
+    "pylibmc>=1.6.3",
+    "pylint>=4.0.5",
+    "pytest>=9.0.3",
+    "pytest-cov>=7.1.0",
+    "pytest-django>=4.12.0",
+    "pytest-env>=1.6.0",
+    "pytest-xdist>=3.8.0",
+    "rstcheck>=6.2.5",
+    "sphinx>=9.1.0",
+    "sqlitedict>=2.1.0",
+    "tox>=4.53.0",
+    "twine>=6.2.0",
+    "wheel>=0.46.3",
+]
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+
+[tool.pdm]
+distribution = true
+
+
+[tool.pdm.scripts]
+test = {cmd = "tox -e py"}
